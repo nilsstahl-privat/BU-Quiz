@@ -235,7 +235,7 @@ function showEnded() {
 }
 
 function fireConfetti() {
-  const colors = ["#fb5a5a", "#2d9cff", "#ffb020", "#1fbf75", "#9b5de5", "#f15bb5"];
+  const colors = ["#6fc3c1", "#fde235", "#b4a493", "#1f7e7b", "#6e5a44", "#212222"];
   let count = 6;
   const shoot = function () {
     confetti({ particleCount: 90, spread: 80, origin: { y: 0.6 }, colors: colors });
@@ -261,9 +261,8 @@ function startRing(game) {
     const secs = Math.ceil(remaining / 1000);
     num.textContent = secs;
     // Farbe wechselt, wenn es knapp wird
-    if (frac < 0.25) circle.style.stroke = "#fb5a5a";
-    else if (frac < 0.5) circle.style.stroke = "#ffb020";
-    else circle.style.stroke = "#ffd166";
+    if (frac < 0.4) circle.style.stroke = "#fde235";
+    else circle.style.stroke = "#6fc3c1";
     if (remaining <= 0) { stopRing(); return; }
     ringLoop = requestAnimationFrame(tick);
   }
