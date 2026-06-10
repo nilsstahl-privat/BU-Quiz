@@ -9,13 +9,15 @@
    Die databaseURL findest du in der Firebase-Konsole bei der Realtime Database.
    ------------------------------------------------------------------------- */
 const firebaseConfig = {
-  apiKey: "DEINE_API_KEY",
-  authDomain: "DEIN_PROJEKT.firebaseapp.com",
-  databaseURL: "https://DEIN_PROJEKT-default-rtdb.europe-west1.firebasedatabase.app",
-  projectId: "DEIN_PROJEKT",
-  storageBucket: "DEIN_PROJEKT.appspot.com",
-  messagingSenderId: "000000000000",
-  appId: "1:000000000000:web:0000000000000000000000"
+  apiKey: "AIzaSyB5EBd7nyjNKH_r8P17SHf0HUEWfIhGbMo",
+  authDomain: "bu-quiz-6e51d.firebaseapp.com",
+  // Bei Standort europe-west1 stimmt diese Adresse. Bei us-central1 lautet sie
+  // stattdessen: https://bu-quiz-6e51d-default-rtdb.firebaseio.com
+  databaseURL: "https://bu-quiz-6e51d-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "bu-quiz-6e51d",
+  storageBucket: "bu-quiz-6e51d.firebasestorage.app",
+  messagingSenderId: "323568399249",
+  appId: "1:323568399249:web:e942a29097dee4627ba030"
 };
 
 firebase.initializeApp(firebaseConfig);
