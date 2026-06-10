@@ -244,25 +244,22 @@ function fireConfetti() {
   shoot();
 }
 
-/* ---------- Countdown-Ring ---------- */
+/* ---------- Countdown-Leiste ---------- */
 function startRing(game) {
   const dur = game.durationMs || durationMsDefault();
   const start = game.startedAt || serverNow();
-  const circle = el("ringFg");
+  const fill = el("barFill");
   const num = el("ringNum");
-  const radius = 110;
-  const circ = 2 * Math.PI * radius;
-  circle.setAttribute("stroke-dasharray", circ);
 
   function tick() {
     const remaining = Math.max(0, start + dur - serverNow());
     const frac = clamp(remaining / dur, 0, 1);
-    circle.setAttribute("stroke-dashoffset", circ * (1 - frac));
+    fill.style.width = (frac * 100) + "%";
     const secs = Math.ceil(remaining / 1000);
     num.textContent = secs;
     // Farbe wechselt, wenn es knapp wird
-    if (frac < 0.4) circle.style.stroke = "#fde235";
-    else circle.style.stroke = "#6fc3c1";
+    if (frac < 0.4) fill.style.background = "#fde235";
+    else fill.style.background = "#6fc3c1";
     if (remaining <= 0) { stopRing(); return; }
     ringLoop = requestAnimationFrame(tick);
   }

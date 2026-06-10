@@ -67,16 +67,13 @@
 
       <!-- Frage -->
       <div id="sQuestion" class="screen-question hidden">
-        <div class="q-big" id="sQBig"></div>
-        <div class="timer-wrap" id="timerWrap">
-          <svg class="ring" width="240" height="240" viewBox="0 0 260 260" aria-hidden="true">
-            <circle class="ring-bg" cx="130" cy="130" r="110" stroke-width="16"></circle>
-            <circle id="ringFg" class="ring-fg" cx="130" cy="130" r="110" stroke-width="16"></circle>
-            <text id="ringNum" class="timer-num" x="130" y="130" text-anchor="middle" dominant-baseline="central">30</text>
-          </svg>
+        <div class="timer-row" id="timerWrap">
+          <div class="timer-secs"><span id="ringNum">30</span><span class="unit">s</span></div>
+          <div class="timer-track"><div class="timer-fill" id="barFill"></div></div>
         </div>
+        <div class="q-big" id="sQBig"></div>
         <div class="opt-grid" id="optGrid"></div>
-        <div style="text-align:center;margin-top:18px;color:var(--text-dim);font-family:var(--font-display);font-size:1.2rem;" id="answerCount">0 Antworten</div>
+        <div class="answer-count" id="answerCount">0 Antworten</div>
       </div>
 
       <!-- Leaderboard -->
