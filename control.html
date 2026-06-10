@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1b1238" />
+  <title>Regie · Wer ist es?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="screen-top">
+      <h1 class="screen-title">Regie<small>Steuerung fuer Fragerunden und Leinwand</small></h1>
+      <div class="state-pill" id="statePill"><span class="dot"></span><span class="txt">Lobby</span></div>
+    </div>
+
+    <div class="control-grid">
+      <div>
+        <div class="card panel">
+          <h3>Aktuelle Frage</h3>
+          <div class="now-q" id="nowQ">Noch keine Frage gestartet.</div>
+          <div class="now-meta">
+            <span><b id="ansCount">0</b> Antworten</span>
+            <span><b id="playerCount">0</b> Spieler</span>
+            <span id="nowAnswer" style="color:var(--text-dim);"></span>
+          </div>
+
+          <div class="btn-row" style="margin-top:18px;">
+            <button class="btn go" id="btnStart">Spiel starten</button>
+            <button class="btn reveal" id="btnReveal">Jetzt aufloesen</button>
+            <button class="btn" id="btnBoard">Leaderboard zeigen</button>
+            <button class="btn go" id="btnNext">Naechste Frage</button>
+            <button class="btn" id="btnEnd">Spiel beenden</button>
+          </div>
+
+          <div class="dur-row">
+            <label for="durInput">Zeit pro Frage (Sekunden):</label>
+            <input id="durInput" type="number" min="5" max="300" value="30" />
+          </div>
+        </div>
+
+        <div class="card panel">
+          <h3>Zu Frage springen <span style="color:var(--text-dim);font-weight:400;">(von <b id="totalQ">0</b>)</span></h3>
+          <div class="q-jump" id="qJump"></div>
+        </div>
+
+        <div class="card panel">
+          <h3>Spiel zuruecksetzen</h3>
+          <div class="btn-row">
+            <button class="btn" id="btnLobby">Zur Lobby</button>
+            <button class="btn danger" id="btnReset">Alles zuruecksetzen</button>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="card panel">
+          <h3>Spieler &amp; Punkte</h3>
+          <div class="plist" id="playerList"></div>
+        </div>
+
+        <div class="card panel">
+          <h3>Links</h3>
+          <div class="links">Mitmach-Seite (QR-Ziel):<br /><span id="linkPlayer"></span></div>
+          <div class="links">Leinwand:<br /><a id="linkScreen" target="_blank" rel="noopener"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="shared.js"></script>
+  <script src="control.js"></script>
+</body>
+</html>

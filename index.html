@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#1b1238" />
+  <title>Mitmachen · Wer ist es?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="player-shell">
+    <div class="brand">
+      <div class="logo">Wer ist es?</div>
+      <div class="tag">Abschluss-Gottesdienst BU</div>
+    </div>
+
+    <!-- Beitritt -->
+    <div id="joinView" class="card join-card hidden">
+      <h2>Mach mit!</h2>
+      <p>Gib deinen Namen ein und stimme bei jeder Frage mit.</p>
+      <input id="nameInput" class="name-input" type="text" maxlength="24" placeholder="Dein Name" autocomplete="off" />
+      <button id="joinBtn" class="btn-primary">Los geht's</button>
+    </div>
+
+    <!-- Spiel -->
+    <div id="gameView" class="hidden">
+      <div class="card you-bar">
+        <span class="who">Hi, <span id="youName"></span></span>
+        <span class="score" id="youScore">0 Pkt</span>
+      </div>
+
+      <div id="pLobby" class="card status-card hidden">
+        <div class="big pulse">Gleich geht es los</div>
+        <div class="sub">Warte auf den Start der ersten Frage.</div>
+      </div>
+
+      <div id="pQuestion" class="hidden">
+        <div class="q-head">
+          <span class="q-counter" id="qCounter"></span>
+          <span class="q-time" id="qTime">30</span>
+        </div>
+        <div class="card q-text" id="qText"></div>
+        <div class="options-list" id="optionsList"></div>
+      </div>
+
+      <div id="pWaiting" class="card status-card hidden">
+        <div class="big">Antwort gespeichert</div>
+        <div class="sub pulse">Warte auf die anderen.</div>
+      </div>
+
+      <div id="pReveal" class="hidden">
+        <div id="revealBanner" class="result-banner good"></div>
+        <div class="card status-card">
+          <div class="sub pulse">Gleich kommt die naechste Frage.</div>
+        </div>
+      </div>
+
+      <div id="pBoard" class="card status-card hidden">
+        <div class="big" id="myRank">Platz</div>
+        <div class="sub" id="myScoreBoard">0 Punkte</div>
+      </div>
+
+      <div id="pEnded" class="card status-card hidden">
+        <div class="big">Danke fuers Mitspielen!</div>
+        <div class="sub" id="endRank"></div>
+        <div class="score" id="endScore" style="margin-top:10px;font-family:var(--font-display);color:var(--accent);font-size:1.4rem;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="shared.js"></script>
+  <script src="player.js"></script>
+</body>
+</html>

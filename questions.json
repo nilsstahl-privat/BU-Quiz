@@ -1,0 +1,48 @@
+{
+  "title": "Wer ist es?",
+  "subtitle": "Abschluss-Gottesdienst BU",
+  "questionDurationSeconds": 30,
+  "options": ["Lisa", "Johanna", "Jonas", "Jaron", "Jesaja", "Jonathan"],
+  "questions": [
+    {
+      "text": "Wer von unseren BUlern kennt das Krankenhaus leider nicht nur vom Vorbeifahren, sondern war dort schon am haeufigsten?",
+      "correct": 2
+    },
+    {
+      "text": "Wer ist schon am laengsten Teil unserer Gemeinde und kennt vermutlich die meisten Geschichten von hier?",
+      "correct": 0
+    },
+    {
+      "text": "Wer wuerde bei der Frage nach seinem Lieblingsort sofort antworten: Die Schweiz?",
+      "correct": 4
+    },
+    {
+      "text": "Wer freut sich an Silvester nicht nur auf Mitternacht, sondern vor allem aufs Boellern?",
+      "correct": 3
+    },
+    {
+      "text": "Wer wurde tatsaechlich schon einmal von einem Auto angefahren?",
+      "correct": 1
+    },
+    {
+      "text": "Wer koennte fast schon Adonia-Profi sein und war bereits sechsmal auf einer Adonia-Freizeit dabei?",
+      "correct": 5
+    },
+    {
+      "text": "Wer kann sagen: Ja, ich bin tatsaechlich schon einmal auf einem Elefanten geritten?",
+      "correct": 0
+    },
+    {
+      "text": "Bei wem warten zu Hause zwei Katzen auf ihre Streicheleinheiten?",
+      "correct": 2
+    },
+    {
+      "text": "Wer tueftelt gerne am Schachbrett und denkt gerne ein paar Zuege voraus?",
+      "correct": 5
+    },
+    {
+      "text": "Wer kann gleich zwei Musikinstrumente spielen?",
+      "correct": 4
+    }
+  ]
+}

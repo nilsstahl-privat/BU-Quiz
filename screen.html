@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#1b1238" />
+  <title>Leinwand · Wer ist es?</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="screen-shell">
+    <div class="screen-top">
+      <h1 class="screen-title" id="screenTitle">Wer ist es?<small id="screenSub"></small></h1>
+      <div class="screen-count" id="screenCount">0 Spieler</div>
+    </div>
+
+    <div class="screen-main">
+      <!-- Lobby -->
+      <div id="sLobby" class="lobby hidden">
+        <div class="card qr-card">
+          <div id="qrcode"></div>
+          <div class="join-url" id="joinUrl"></div>
+          <div class="hint">Mit der Handy-Kamera scannen</div>
+        </div>
+        <div class="lobby-right">
+          <h2>Scanne und mach mit</h2>
+          <p class="lead"><span id="lobbyCount">0</span> sind schon dabei</p>
+          <div class="player-chips" id="playerChips"></div>
+        </div>
+      </div>
+
+      <!-- Frage -->
+      <div id="sQuestion" class="screen-question hidden">
+        <div class="q-big" id="sQBig"></div>
+        <div class="timer-wrap" id="timerWrap">
+          <svg class="ring" width="240" height="240" viewBox="0 0 260 260" aria-hidden="true">
+            <circle class="ring-bg" cx="130" cy="130" r="110" stroke-width="16"></circle>
+            <circle id="ringFg" class="ring-fg" cx="130" cy="130" r="110" stroke-width="16"></circle>
+            <text id="ringNum" class="timer-num" x="130" y="130" text-anchor="middle" dominant-baseline="central">30</text>
+          </svg>
+        </div>
+        <div class="opt-grid" id="optGrid"></div>
+        <div style="text-align:center;margin-top:18px;color:var(--text-dim);font-family:var(--font-display);font-size:1.2rem;" id="answerCount">0 Antworten</div>
+      </div>
+
+      <!-- Leaderboard -->
+      <div id="sBoard" class="board hidden">
+        <h2 id="boardTitle">Leaderboard</h2>
+        <div id="boardRows"></div>
+      </div>
+
+      <!-- Ende -->
+      <div id="sEnded" class="board hidden">
+        <h2>Das war's! Die Sieger</h2>
+        <div class="podium" id="podium"></div>
+        <div id="boardRest" style="margin-top:30px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+  <script src="shared.js"></script>
+  <script src="screen.js"></script>
+</body>
+</html>
