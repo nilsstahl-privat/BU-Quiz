@@ -239,10 +239,16 @@ function showMyRank(targetId) {
 function startTimer(game, onEnd) {
   const dur = game.durationMs || durationMsDefault();
   const start = game.startedAt || serverNow();
+  const fill = el("pBarFill");
   function tick() {
     const remaining = Math.max(0, start + dur - serverNow());
+    const frac = clamp(remaining / dur, 0, 1);
     const secs = Math.ceil(remaining / 1000);
     el("qTime").textContent = secs;
+    if (fill) {
+      fill.style.width = (frac * 100) + "%";
+      fill.style.background = frac < 0.4 ? "#fde235" : "#6fc3c1";
+    }
     if (remaining <= 0) {
       stopTimer();
       if (onEnd) onEnd();
