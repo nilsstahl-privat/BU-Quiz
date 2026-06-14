@@ -36,9 +36,9 @@ function buildQr() {
     el("qrcode").innerHTML = "";
     new QRCode(el("qrcode"), {
       text: playerUrl,
-      width: 240,
-      height: 240,
-      colorDark: "#1b1238",
+      width: 440,
+      height: 440,
+      colorDark: "#212222",
       colorLight: "#ffffff",
       correctLevel: QRCode.CorrectLevel.M
     });
@@ -197,7 +197,7 @@ function showEnded() {
   playersRef.once("value", function (snap) {
     const arr = snapToPlayers(snap).sort(function (a, b) { return b.score - a.score; });
     const top = arr.slice(0, 3);
-    const order = [1, 0, 2]; // Silber, Gold, Bronze fuer die Optik
+    const order = [1, 0, 2]; // Silber, Gold, Bronze für die Optik
     const crowns = ["\uD83E\uDD48", "\uD83D\uDC51", "\uD83E\uDD49"];
     const box = el("podium");
     box.innerHTML = "";

@@ -208,9 +208,9 @@ h1, h2, h3 { margin: 0; line-height: 1.04; font-weight: 800; }
 .screen-main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
 
 /* Lobby */
-.lobby { display: grid; grid-template-columns: minmax(320px, 0.9fr) 1.1fr; gap: 34px; align-items: center; }
-.qr-card { padding: 30px; text-align: center; }
-.qr-card #qrcode { background: #fff; padding: 14px; border-radius: 16px; display: inline-block; border: 1px solid var(--line); }
+.lobby { display: grid; grid-template-columns: minmax(500px, 0.85fr) 1fr; gap: 40px; align-items: center; }
+.qr-card { padding: 28px; text-align: center; }
+.qr-card #qrcode { background: #fff; padding: 18px; border-radius: 18px; display: inline-block; border: 1px solid var(--line); }
 .qr-card img, .qr-card canvas { display: block; }
 .qr-card .join-url { margin-top: 16px; font-weight: 700; font-size: 1.05rem; word-break: break-all; color: var(--ink); }
 .qr-card .hint { color: var(--ink-soft); font-weight: 500; margin-top: 6px; }
